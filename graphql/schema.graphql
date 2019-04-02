@@ -1,15 +1,43 @@
 type Movie {
-    id: Int!
-    name: String!
-    score: Int!
+    imdbID: String!,
+    Title: String!,
+    Year: String!,
+    Type: String!,
+    Poster: String
+}
+type MovieDetail {
+    Title: String,
+    Year: String,
+    Rated: String,
+    Released: String,
+    Runtime: String,
+    Genre: String,
+    Director: String,
+    Writer: String,
+    Actors: String,
+    Plot: String,
+    Language: String,
+    Country: String,
+    Awards: String,
+    Poster: String,
+    Metascore: String,
+    imdbRating: String,
+    imdbVotes: String,
+    imdbID: String!,
+    Type: String,
+    DVD: String,
+    BoxOffice: String,
+    Production: String,
+    Website: String,
+    Response: String
 }
 
 type Query {
-    movies: [Movie]!
-    movie(id: Int!): Movie
+    movies(title: String): [Movie]
+    movie(imdbID: String!): MovieDetail
 }
 
-type Mutation {
-    addMovie(name: String!, score: Int!): Movie!
-    deleteMovie(id: Int!): Boolean!
-}
+# type Mutation {
+#     addMovie(name: String!, score: Int!): Movie!
+#     deleteMovie(id: Int!): Boolean!
+# }
